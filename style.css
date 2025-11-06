@@ -123,6 +123,10 @@ body {
     background-image: linear-gradient(135deg, #EC4899, #D946EF);
 }
 
+.box:nth-child(4) .icon-container {
+    background-image: linear-gradient(135deg, #34b3da, #7c42e9);
+}
+
 .tech-tags {
     display: flex;
     gap: 8px; 
@@ -178,6 +182,17 @@ body {
 }
 .btn-primary:hover {
     background-image: linear-gradient(135deg, #059669, #047857); 
+}
+
+.btn-primary-ex3{
+    background-image: linear-gradient(135deg, #3399dd, #8552e4); 
+    color: white;
+}
+
+.btn-primary-ex3{
+    background-image: linear-gradient(135deg, #027bcc, #5e1ed4); 
+    color: white;
+
 }
 
 
