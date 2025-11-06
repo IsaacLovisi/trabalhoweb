@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script1.js"></script>
+</head>
+<body>
+    <div>
+        <h1> Exercício 2 - Versão 2 </h1>
+        <h3> Cálculo de média com switch/case</h3>
+    </div>
+
+    <div><b>Método utilizado:</b> switch/case</div>
+
+    <div>
+        <h2> Dados do aluno </h2>
+        <form action="" method="get">
+            <label for=""><b>Nome do aluno </b></label>
+            <input type="number" name="input_nome_aluno" id="input_nome_aluno">
+            inpu
+
+
+            <div>
+                <div>
+                    <label for=""><b>Nota 1</b></label>
+                    <input type="number" name="input_nota" id="input_nota1">
+                </div>
+
+                <div>
+                    <label for=""><b>Nota 2</b></label>
+                    <input type="number" name="input_nota" id="input_nota2">
+                </div>
+
+                <div>
+                    <label for=""><b>Nota 3</b></label>
+                    <input type="number" name="input_nota" id="input_nota3">
+                </div>
+                
+                <div>
+                    <label for=""><b>Nota 4</b></label>
+                    <input type="number" name="input_nota" id="input_nota4">
+                </div>
+            </div>
+            <button type="button" onclick="calcular_media()"> Calcular Média</button>
+            <button type="reset"> Limpar </button>
+        </form>
+    </div>
+
+    <div> 
+        <h2> Resultado </h2>
+        <div id="divResultado"></div>
+        <ul>
+            <li>Aprovado: média maior ou igual a 70 pontos </li>
+            <li>Recuperação: média entre 69 e 50 pontos </li>
+            <li>Reprovado: média menor que 50 pontos </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>💻 Lógica com switch/case</h2>
+        <pre>
+function calcular_media() {
+    let nome = "sem nome"
+    nome = document.getElementById("input_nome_aluno").value
+
+    let notas = Array.from(document.getElementsByName("input_nota")).map(nota => parseInt(nota.value))
+
+    let soma = 0
+
+    notas.forEach(nota => {
+        soma += nota
+    })
+
+    divResultado = document.getElementById("divResultado")
+
+    media = soma / notas.length
+
+    txtMedia = document.createElement("p")
+    txtMedia.innerHTML = `O aluno ${nome} obteve uma média de ${media}, portanto ele obteve o resultado: \n`
+
+    let status = 0
+
+    if (media >= 70){
+        status = 1
+        
+    } else if (media >= 50){
+        status = 2
+        
+    } else {
+        status = 3
+        
+    }
+    
+    switch (status){
+        case 1:
+            txtMedia.innerHTML += "✅ APROVADO"
+            break
+        case 2:
+            txtMedia.innerHTML += "⚠️ RECUPERAÇÃO"
+            break
+        case 3:
+            txtMedia.innerHTML += "❌ REPROVADO"
+            break       
+    }
+        
+    divResultado.appendChild(txtMedia)
+    
+}
+        </pre>
+    </div>
+</body>
+</html>
