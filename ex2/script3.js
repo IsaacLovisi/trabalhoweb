@@ -10,14 +10,16 @@ function calcular_media() {
         soma += nota
     })
 
-    divResultado = document.getElementById("divResultado")
+    divResultado = document.getElementById("resultado-final")
 
     media = soma / notas.length
 
     txtMedia = document.createElement("p")
     txtMedia.innerHTML = `O aluno ${nome} obteve uma média de ${media}, portanto ele obteve o resultado: \n`
 
-    txtMedia.innerHTML = (media >= 70) ? "✅ APROVADO" : ((media >= 50) ? "⚠️ RECUPERAÇÃO" : "❌ REPROVADO")
+    txtMedia.innerHTML += (media >= 70) ? "✅ APROVADO" : ((media >= 50) ? "⚠️ RECUPERAÇÃO" : "❌ REPROVADO")
     divResultado.appendChild(txtMedia)
+    divResultado.style.display = "flex"
+    divResultado.style.flexDirection = "column"
     
 }

@@ -10,7 +10,8 @@ function calcular_media() {
         soma += nota
     })
 
-    divResultado = document.getElementById("divResultado")
+
+    divResultado = document.getElementById("resultado-final")
 
     media = soma / notas.length
 
@@ -43,5 +44,7 @@ function calcular_media() {
     }
         
     divResultado.appendChild(txtMedia)
+    divResultado.style.display = "flex"
+    divResultado.style.flexDirection = "column"
     
 }
