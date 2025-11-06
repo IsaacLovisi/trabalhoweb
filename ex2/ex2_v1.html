@@ -1,95 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script1.js"></script>
+    <title>Exercício 2 - Cálculo de Média</title>
+
+    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="ex2.css"> 
+    
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div>
-        <h1> Exercício 2 - Versão 1 </h1>
-        <h3> Cálculo de média com if/else aninhados</h3>
-    </div>
 
-    <div><b>Método utilizado:</b> if/else aninhados</div>
+    <header class="header-voltar">
+        <a href="../index.html" class="btn-voltar">&larr; Voltar ao Início</a>
+    </header>
 
-    <div>
-        <h2> Dados do aluno </h2>
-        <form action="" method="get">
-            <label for=""><b>Nome do aluno </b></label>
-            <input type="number" name="input_nome_aluno" id="input_nome_aluno">
+    <main class="container-principal">
 
-
-            <div>
-                <div>
-                    <label for=""><b>Nota 1</b></label>
-                    <input type="number" name="input_nota" id="input_nota1">
-                </div>
-
-                <div>
-                    <label for=""><b>Nota 2</b></label>
-                    <input type="number" name="input_nota" id="input_nota2">
-                </div>
-
-                <div>
-                    <label for=""><b>Nota 3</b></label>
-                    <input type="number" name="input_nota" id="input_nota3">
-                </div>
-                
-                <div>
-                    <label for=""><b>Nota 4</b></label>
-                    <input type="number" name="input_nota" id="input_nota4">
+        <div class="box-exercicio" id="exercicio2"> 
+            
+            <div class="exercicio-header">
+                <div class="icone-exercicio">
+                    </div>
+                <div class="titulo-exercicio">
+                    <h2>Exercício 2 - Versão 1</h2>
+                    <p>Cálculo de Média com If/Else Aninhados</p>
                 </div>
             </div>
-            <button type="button" onclick="calcular_media()"> Calcular Média</button>
-            <button type="reset"> Limpar </button>
-        </form>
-    </div>
 
-    <div> 
-        <h2> Resultado </h2>
-        <div id="divResultado"></div>
-        <ul>
-            <li>Aprovado: média maior ou igual a 70 pontos </li>
-            <li>Recuperação: média entre 69 e 50 pontos </li>
-            <li>Reprovado: média menor que 50 pontos </li>
-        </ul>
-    </div>
+            <div class="metodo-utilizado-bar">
+                <strong>Método utilizado:</strong> If/Else Aninhados
+            </div>
 
-    <div>
-        <h2>💻 Lógica com if/else aninhados</h2>
-        <pre>
-function calcular_media() {
-    let nome = "sem nome"
-    nome = document.getElementById("input_nome_aluno").value
+            <div class="exercicio-body">
+                
+                <div class="coluna-inputs">
+                    <h3>Dados do Aluno</h3>
+                    
+                    <form id="form-media">
+                        <div class="form-group">
+                            <label for="input_nome_aluno">Nome do Aluno</label>
+                            <input type="text" id="input_nome_aluno" placeholder="Digite o nome do aluno">
+                        </div>
 
-    let notas = Array.from(document.getElementsByName("input_nota")).map(nota => parseInt(nota.value))
+                        <div class="notas-grid">
+                            <div class="form-group">
+                                <label for="input_nota1">Nota 1</label>
+                                <input type="number" id="input_nota1" placeholder="0 a 100">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_nota2">Nota 2</label>
+                                <input type="number" id="input_nota2" placeholder="0 a 100">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_nota3">Nota 3</label>
+                                <input type="number" id="input_nota3" placeholder="0 a 100">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_nota4">Nota 4</label>
+                                <input type="number" id="input_nota4" placeholder="0 a 100">
+                            </div>
+                        </div>
+                        
+                        <div class="botoes-container">
+                            <button type="button" onclick="calcular_media()" class="btn btn-calcular">Calcular Média</button>
+                            <button type="reset" onclick="limpar()" class="btn btn-limpar">Limpar</button>
+                        </div>
+                    </form>
+                </div>
 
-    let soma = 0
+                <div class="coluna-resultado">
+                    <h3>Resultado</h3>
+                    <div class="resultado-placeholder" id="placeholder-resultado">
+                        <span class="resultado-placeholder-icone">🎓</span>
+                        <p>Preencha os dados do aluno e clique em "Calcular Média"</p>
+                    </div>
 
-    notas.forEach(nota => {
-        soma += nota
-    })
-
-    divResultado = document.getElementById("divResultado")
-
-    media = soma / notas.length
-
-    txtMedia = document.createElement("p")
-    txtMedia.innerHTML = `O aluno ${nome} obteve uma média de ${media}, portanto ele obteve o resultado: \n`
-    if (media >= 70){
-        txtMedia.innerHTML += "✅ APROVADO"
-    } else if (media >= 50){
-        txtMedia.innerHTML += "⚠️ RECUPERAÇÃO"
-    } else {
-        txtMedia.innerHTML += "❌ REPROVADO"
-    }
-        
-    divResultado.appendChild(txtMedia)
-    
+                    <div id="resultado-final" style="display: none;">
+                        </div>
+                </div>
+            </div>
+        </div> <div class="box-logica">
+            <h3>Lógica com If/Else Aninhados</h3>
+            <pre>
+if (media >= 70) {
+  situacao = 'APROVADO';
+  cor = 'text-green-600';
+  mensagem = 'Parabéns! Você foi aprovado com sucesso!';
+} else {
+  if (media >= 50) {
+    situacao = 'RECUPERAÇÃO';
+    cor = 'text-yellow-600';
+    mensagem = 'Você está em recuperação. Estude mais!';
+  } else {
+    situacao = 'REPROVADO';
+    cor = 'text-red-600';
+    mensagem = 'Infelizmente você foi reprovado.';
+  }
 }
-        </pre>
-    </div>
+            </pre>
+        </div>
+
+    </main>
+    
 </body>
 </html>

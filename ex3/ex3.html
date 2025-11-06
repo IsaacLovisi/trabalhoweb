@@ -1,75 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Exercício 3 - Formulário Completo</title>
+
+    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="ex3.css"> 
+    
+    </head>
 <body>
-    <div class="container">
-        <label id="label_nome">Olá, </label>
-        <span>!</span>
-        <br>
-        <label>Por favor, preencha os campos abaixo e depois clique no botão Enviar. Caso necessite apagar os dados, dê um clique no botão Limpar.</label>
-        <label>Muito obrigado!</label>
-        
-        <form action="" method="post">
-            <label for="">Nome completo</label>
-            <input type="text" name="usuario" id="input_nome">
+
+    <header class="header-voltar">
+        <a href="../index.html" class="btn-voltar">&larr; Voltar ao Início</a>
+    </header>
+
+    <main class="container-principal">
+
+        <div class="box-exercicio" id="exercicio3"> 
             
-            <label> Seu e-mail: </label>
-            <input type="text" name="usuario" id="input_email">
-            
-            <br>
-            
-            <label> Sexo: </label><br>
-            <input type="radio" name="sexo" id="sexo_feminino">Feminino <br>
-            <input type="radio" name="sexo" id="sexo_masculino">Masculino <br>
-            
-            <label for="">Estado Civil: </label><br>
-            <input type="radio" name="estado_civil" id="estado_solteiro">Solteiro <br>
-            <input type="radio" name="estado_civil" id="estado_casado">Casado <br>
-            <input type="radio" name="estado_civil" id="estado_enrolado">Enrolado <br>
-            
-            <label for="">Bens que possui: </label><br>
-            <input type="checkbox" name="bens" id="bens_casa">Casa <br>
-            <input type="checkbox" name="bens" id="bens_automovel">Automóvel <br>
-            <input type="checkbox" name="bens" id="bens_moto">Moto <br>
-            
-            <label for="">Faixa de idade: </label>
-            <select name="faixa_idade" id="select_faixa_idade">
-                <option value="18-25">18 a 25 anos</option>
-                <option value="26-35">26 a 35 anos</option>
-                <option value="36-45">36 a 45 anos</option>
-                <option value="46-55">46 a 55 anos</option>
-                <option value="56-65">56 a 65 anos</option>
-                <option value="65+">Acima de 65 anos</option>
-            </select>
-            
-            <label for="">Hobby preferido: </label>
-            <select name="hobby_preferido" id="select_hobby_preferido">
-                <option value="ouvir_musica">Ouvir música</option>
-                <option value="ler">Ler livros</option>
-                <option value="jogos">Jogar videogames</option>
-                <option value="esportes">Praticar esportes</option>
-                <option value="cozinhar">Cozinhar</option>
-                <option value="jardinagem">Jardinagem</option>
-                <option value="fotografia">Fotografia</option>
-                <option value="pintura">Pintura/Desenho</option>
-                <option value="danca">Dançar</option>
-                <option value="viagem">Tocar instrumento</option>
-                <option value="viagem">Outro</option>
-            </select> <br> <br>
-            
-            <label for="">Observações gerais:</label> <br>
-            <textarea name="obs" id="obs" cols="30" rows="10"></textarea><br><br>
-            
-            <button type="button" onclick="enviar_form()">Enviar os dados</button>
-            <button type="reset">Limpar os dados</button>
-            
-            
-        </form>
-    </div>
-    <script src="script.js"></script>
+            <div class="exercicio-header">
+                <div class="icone-exercicio">
+                    </div>
+                <div class="titulo-exercicio">
+                    <h2>Exercício 3</h2>
+                    <p>Formulário Completo de Cadastro</p>
+                </div>
+            </div>
+
+            <div class="exercicio-body">
+                <form id="form-cadastro">
+                    
+                    <div class="form-group">
+                        <label for="input_nome">Nome Completo *</label>
+                        <input type="text" id="input_nome" class="form-input" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input_email">E-mail *</label>
+                        <input type="email" id="input_email" class="form-input" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select_sexo">Sexo *</label>
+                        <select id="select_sexo" class="form-input" required>
+                            <option value="" disabled selected>Selecione seu sexo</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="outro">Outro</option>
+                            <option value="nao-informar">Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select_estado_civil">Estado Civil *</label>
+                        <select id="select_estado_civil" class="form-input" required>
+                            <option value="" disabled selected>Selecione seu estado civil</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bens que possui</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="bens" value="moto">
+                                <span class="custom-checkbox"></span>
+                                <span>&#127949; Moto</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="bens" value="carro">
+                                <span class="custom-checkbox"></span>
+                                <span>&#128663; Carro</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="bens" value="casa">
+                                <span class="custom-checkbox"></span>
+                                <span>&#127968; Casa</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select_faixa_idade">Faixa de Idade *</label>
+                        <select id="select_faixa_idade" class="form-input" required>
+                            <option value="" disabled selected>Selecione sua faixa de idade</option>
+                            <option value="18-25">18 a 25 anos</option>
+                            <option value="26-35">26 a 35 anos</option>
+                            <option value="36-45">36 a 45 anos</option>
+                            <option value="46-55">46 a 55 anos</option>
+                            <option value="56+">56 anos ou mais</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select_hobby">Hobby Preferido *</label>
+                        <select id="select_hobby" class="form-input" required>
+                            <option value="" disabled selected>Selecione seu hobby preferido</option>
+                            <option value="ler">Ler</option>
+                            <option value="esportes">Praticar esportes</option>
+                            <option value="jogos">Jogar videogames</option>
+                            <option value="musica">Ouvir música</option>
+                            <option value="viajar">Viajar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="textarea_obs">Dados Gerais</label>
+                        <textarea id="textarea_obs" class="form-input" rows="5" placeholder="Digite aqui informações adicionais..."></textarea>
+                        <small>Campo opcional para informações complementares.</small>
+                    </div>
+
+                    <div class="botoes-container">
+                        <button type="submit" class="btn btn-enviar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                                <path d="M3.105 3.105a1 1 0 011.414 0L10 8.586l5.48-5.48a1 1 0 111.415 1.414L11.414 10l5.48 5.48a1 1 0 11-1.414 1.415L10 11.414l-5.48 5.48a1 1 0 11-1.415-1.414L8.586 10 3.105 4.52z" transform="rotate(45 10 10)" />
+                            </svg>
+                            Enviar Dados
+                        </button>
+                        <button type="reset" class="btn btn-limpar">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                                <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 006 3.75v.438c0 .59.224 1.154.622 1.588l2.031 2.193a.75.75 0 001.094 0l2.03-2.193A2.001 2.001 0 0012.399 5.5H13a.75.75 0 000-1.5h-.601a3.501 3.501 0 00-2.892-2.188A2.75 2.75 0 008.75 1zM3 9.75A.75.75 0 013.75 9h12.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.75zM3.75 12a.75.75 0 000 1.5h12.5a.75.75 0 000-1.5H3.75zM4 15.75a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                            </svg>
+                            Limpar
+                        </button>
+                    </div>
+                    <small class="campo-obrigatorio">* Campos obrigatórios</small>
+
+                </form>
+            </div>
+        </div> <div class="box-info">
+            <h3>Sobre este Formulário</h3>
+            <p>Este formulário demonstra o uso de diversos componentes HTML:</p>
+            <ul>
+                <li>Campos de texto (input)</li>
+                <li>Seleção (select/dropdown)</li>
+                <li>Checkboxes para múltipla escolha</li>
+                <li>Área de texto (textarea)</li>
+                <li>Validação de campos obrigatórios</li>
+                <li>Botões de envio e limpeza</li>
+            </ul>
+        </div>
+
+    </main>
+    
 </body>
 </html>

@@ -1,29 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo do Salário Líquido</title>
-    <script src="./script.js"></script>
+    <title>Exercício 1 - Cálculo Salário</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="ex1.css"> 
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <form action="">
-        <label for="">Insira a quantidade de horas trabalhadas do funcionário (135 a 180): </label>
-        <input type="text" placeholder="Horas trabalhadas" name="input_horas_trabalhadas" id="input_horas_trabalhadas">
-        <br>
 
-        <label for="">Insira o valor da hora do funcionário (25 a 50): </label>
-        <input type="text" placeholder="Valor da hora (R$)" name="input_valor_hora" id="input_valor_hora">
-        
-        <br>
-        <label for="">Insira o valor do desconto do INSS (5 a 15): </label>
-        <input type="text" placeholder="Desconto do INSS (%)" name="input_desconto_inss" id="input_desconto_inss">
-        <br>
-        <button type="button" onclick="calcular()"> Calcular </button>
-    </form>
+    <header class="header-voltar">
+        <a href="../index.html" class="btn-voltar">&larr; Voltar ao Início</a>
+    </header>
 
+    <main class="container-principal">
 
-    
-</body>
+        <div class="box-exercicio" id="exercicio1"> 
+            
+            <div class="exercicio-header">
+                <div class="icone-exercicio">
+                    </div>
+                <div class="titulo-exercicio">
+                    <h2>Exercício 1</h2>
+                    <p>Calculadora de Salário Líquido - Funcionário Horista</p>
+                </div>
+            </div>
 
+            <div class="exercicio-body">
+                
+                <div class="coluna-inputs">
+                    <h3>Dados do Funcionário</h3>
+                    
+                    <form id="form-salario">
+                        <div class="form-group">
+                            <label for="input_horas_trabalhadas">Horas Trabalhadas no Mês</label>
+                            <input type="number" id="input_horas_trabalhadas" name="input_horas_trabalhadas" placeholder="Ex: 160">
+                            <small>Valor entre 135 e 180</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_valor_hora">Valor da Hora de Trabalho (R$)</label>
+                            <input type="number" id="input_valor_hora" name="input_valor_hora" placeholder="Ex: 30.50">
+                            <small>Valor entre R$ 25,00 e R$ 70,00</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="input_desconto_inss">Percentual de Desconto INSS (%)</label>
+                            <input type="number" id="input_desconto_inss" name="input_desconto_inss" placeholder="Ex: 10">
+                            <small>Percentual entre 5% e 15%</small>
+                        </div>
+                        
+                        <div class="botoes-container">
+                            <button type="button" onclick="calcular()" class="btn btn-calcular">Calcular Salário</button>
+                            
+                            <button type="reset" onclick="limpar()" class="btn btn-limpar">Limpar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="coluna-resultado">
+                    <h3>Resultado</h3>
+                    <div class="resultado-placeholder">
+                        <span class="resultado-placeholder-icone">📄</span>
+                        <p>Preencha os dados e clique em "Calcular Salário"</p>
+                    </div>
+
+                    <div id="resultado-final" style="display: none;">
+                        </div>
+                </div>
+            </div>
+        </div> <div class="box-info">
+            <h3>Informações</h3>
+            <p><strong>Cálculo:</strong> Salário Bruto = Horas Trabalhadas × Valor da Hora</p>
+            <p><strong>Desconto INSS:</strong> Salário Bruto × (Percentual INSS ÷ 100)</p>
+            <p><strong>Salário Líquido:</strong> Salário Bruto - Desconto INSS</p>
+        </div>
+         
+         </main> </body>
 </html>
