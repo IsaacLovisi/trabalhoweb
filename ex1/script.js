@@ -16,7 +16,7 @@ function calcular() {
         window.alert("INSIRA UM VALOR VÁLIDO!!!!")
     } else {
 
-        salarioBruto = valorHora * horasTrabalhadas
+        salarioBruto = valorHora * horasTrabalhadas // cálculos das informações do trabalhador
         console.log(salarioBruto)
 
         totalDesconto = (salarioBruto * descontoInss) / 100
@@ -27,18 +27,22 @@ function calcular() {
     
 
     
-        textoSalarioBruto = document.createElement("p")
+        textoSalarioBruto = document.createElement("h5") //cria tags para display das informações
         textoSalarioBruto.innerHTML = `<b> Salário BRUTO </b> = ${salarioBruto}`
         
-        textoDesconto = document.createElement("p")
+        textoDesconto = document.createElement("h5")
         textoDesconto.innerHTML = `Total de Desconto INSS = ${totalDesconto}`    
 
-        textoSalarioLiquido = document.createElement("p")
+        textoSalarioLiquido = document.createElement("h5")
         textoSalarioLiquido.innerHTML = `<b> Salario Líquido </b>= ${salarioLiquido}`
+
+        divResultado = document.getElementById("resultado-final") // desoculta a div do resultado
+        divResultado.style.display = "flex"
+        divResultado.style.flexDirection = "column"
         
-        document.body.appendChild(textoSalarioBruto)
-        document.body.appendChild(textoDesconto)
-        document.body.appendChild(textoSalarioLiquido)
+        divResultado.appendChild(textoSalarioBruto) // coloca os textos dentro da div resultado
+        divResultado.appendChild(textoDesconto)
+        divResultado.appendChild(textoSalarioLiquido)
     }
 
 
