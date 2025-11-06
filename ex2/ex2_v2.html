@@ -82,32 +82,29 @@
         <div class="box-logica">
             <h3>Lógica com Switch/Case</h3>
             <pre>
-let status = 0;
+let status = 0
 
-if (media >= 70) {
-  status = 1;
-} else if (media >= 50) {
-  status = 2;
+if (media >= 70){
+    status = 1
+    
+} else if (media >= 50){
+    status = 2
+    
 } else {
-  status = 3;
+    status = 3
+    
 }
 
-switch (status) {
-  case 1:
-    situacao = 'APROVADO';
-    corClasse = 'aprovado';
-    mensagem = 'Parabéns!';
-    break;
-  case 2:
-    situacao = 'RECUPERAÇÃO';
-    corClasse = 'recuperacao';
-    mensagem = 'Estude mais!';
-    break;
-  case 3:
-    situacao = 'REPROVADO';
-    corClasse = 'reprovado';
-    mensagem = 'Infelizmente...';
-    break;
+switch (status){
+    case 1:
+        txtMedia.innerHTML += "✅ APROVADO"
+        break
+    case 2:
+        txtMedia.innerHTML += "⚠️ RECUPERAÇÃO"
+        break
+    case 3:
+        txtMedia.innerHTML += "❌ REPROVADO"
+        break       
 }
             </pre>
         </div>

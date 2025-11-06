@@ -82,18 +82,23 @@
         <div class="box-logica">
             <h3>Lógica com Operador Ternário</h3>
             <pre>
-situacao = (media >= 70) ? 'APROVADO' 
-           : (media >= 50) ? 'RECUPERAÇÃO' 
-           : 'REPROVADO';
+let soma = 0
 
-corClasse = (media >= 70) ? 'aprovado'
-            : (media >= 50) ? 'recuperacao'
-            : 'reprovado';
+notas.forEach(nota => {
+    soma += nota
+})
 
-mensagem = (media >= 70) ? 'Parabéns! Você foi aprovado!'
-           : (media >= 50) ? 'Você está em recuperação.'
-           : 'Infelizmente você foi reprovado.';
-            </pre>
+divResultado = document.getElementById("divResultado")
+
+media = soma / notas.length
+
+txtMedia = document.createElement("p")
+txtMedia.innerHTML = `O aluno ${nome} obteve uma média de ${media}, portanto ele obteve o resultado: \n`
+
+txtMedia.innerHTML = (media >= 70) ? "✅ APROVADO" : ((media >= 50) ? "⚠️ RECUPERAÇÃO" : "❌ REPROVADO")
+divResultado.appendChild(txtMedia)
+            </pre> 
+            <!-- operador ternário ^^^^ -->
         </div>
     </main>
     
