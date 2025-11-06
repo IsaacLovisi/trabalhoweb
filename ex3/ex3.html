@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <label id="label_nome">Olá, </label>
+        <span>!</span>
+        <br>
+        <label>Por favor, preencha os campos abaixo e depois clique no botão Enviar. Caso necessite apagar os dados, dê um clique no botão Limpar.</label>
+        <label>Muito obrigado!</label>
+        
+        <form action="" method="post">
+            <label for="">Nome completo</label>
+            <input type="text" name="usuario" id="input_nome">
+            
+            <label> Seu e-mail: </label>
+            <input type="text" name="usuario" id="input_email">
+            
+            <br>
+            
+            <label> Sexo: </label><br>
+            <input type="radio" name="sexo" id="sexo_feminino">Feminino <br>
+            <input type="radio" name="sexo" id="sexo_masculino">Masculino <br>
+            
+            <label for="">Estado Civil: </label><br>
+            <input type="radio" name="estado_civil" id="estado_solteiro">Solteiro <br>
+            <input type="radio" name="estado_civil" id="estado_casado">Casado <br>
+            <input type="radio" name="estado_civil" id="estado_enrolado">Enrolado <br>
+            
+            <label for="">Bens que possui: </label><br>
+            <input type="checkbox" name="bens" id="bens_casa">Casa <br>
+            <input type="checkbox" name="bens" id="bens_automovel">Automóvel <br>
+            <input type="checkbox" name="bens" id="bens_moto">Moto <br>
+            
+            <label for="">Faixa de idade: </label>
+            <select name="faixa_idade" id="select_faixa_idade">
+                <option value="18-25">18 a 25 anos</option>
+                <option value="26-35">26 a 35 anos</option>
+                <option value="36-45">36 a 45 anos</option>
+                <option value="46-55">46 a 55 anos</option>
+                <option value="56-65">56 a 65 anos</option>
+                <option value="65+">Acima de 65 anos</option>
+            </select>
+            
+            <label for="">Hobby preferido: </label>
+            <select name="hobby_preferido" id="select_hobby_preferido">
+                <option value="ouvir_musica">Ouvir música</option>
+                <option value="ler">Ler livros</option>
+                <option value="jogos">Jogar videogames</option>
+                <option value="esportes">Praticar esportes</option>
+                <option value="cozinhar">Cozinhar</option>
+                <option value="jardinagem">Jardinagem</option>
+                <option value="fotografia">Fotografia</option>
+                <option value="pintura">Pintura/Desenho</option>
+                <option value="danca">Dançar</option>
+                <option value="viagem">Tocar instrumento</option>
+                <option value="viagem">Outro</option>
+            </select> <br> <br>
+            
+            <label for="">Observações gerais:</label> <br>
+            <textarea name="obs" id="obs" cols="30" rows="10"></textarea><br><br>
+            
+            <button type="button" onclick="enviar_form()">Enviar os dados</button>
+            <button type="reset">Limpar os dados</button>
+            
+            
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
